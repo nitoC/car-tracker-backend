@@ -24,7 +24,7 @@ const getAllparks = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         else {
             parks = yield index_js_1.default.query(`SELECT * FROM parkingspaces`);
         }
-        res.status(200).json({ result: parks.rows });
+        res.status(200).json({ id: parks.rows[0].spaceid, zone: parks.rows[0].location, area: parks.rows[0].spacename, remain: parks.rows[0].available });
     }
     catch (err) {
         console.log(err);

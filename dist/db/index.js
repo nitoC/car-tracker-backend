@@ -9,6 +9,6 @@ dotenv_1.default.config();
 let arg = process.env.POSTGRES_PORT || "";
 let db_port = parseInt(arg);
 const pool = new pg_1.Pool({
-    connectionString: "postgres://biedkgtt:i3R1V9z-IQtJdj5RvRWClxyPlRzE7bLg@babar.db.elephantsql.com/biedkgtt"
+    connectionString: process.env.CONN
 });
 exports.default = pool;
